@@ -5,12 +5,15 @@ Web app for labratory
 Build Setup
 
 #install dependencies
+
 npm install
 
-serve with hot reload at localhost:8080
+#serve with hot reload at localhost:8080
+
 npm run serv
 
-build for production with minification
+#build for production with minification
+
 npm run build
 
 Language: JavaScript
