@@ -1,0 +1,43 @@
+sta jos treba uraditi
+security firebase, ko ima pristup kojim podacima- the net ninja - GOTOVO
+napraviti register - GOTOVO
+dodati username , ime, prezime (firebase.firestore().collection('users'))- GOTOVO
+kada se loguje da proveri da li je logovan i ko..i da gore izbaci njegovo ime - GOTOVO
+RESPONSIVE !!!! - GOTOVO 
+povuci podatke iz firestore logovanog korisnika - GOTOVO
+kada hoce manuelno da udje na stranicu a nije logovan (u router-u) - GOTOVO
+cache (app.vue) keep-alive - GOTOVOuser roles - GOTOVO
+Contact us na prvoj - GOTOVO
+
+info:
+web application
+responsive
+
+Vue
+Babel
+CLI
+NPM
+Vuex
+Router
+
+Vue UI Framework:
+Vuetify
+
+Firebase - baza je mongoDB proveriti
+hosting
+authentication
+database --> cloud firestore
+storage
+
+components:
+vue2-filters
+SequentialEntrance
+scrollAnimation
+VueFlux - carousel
+
+plugins:
+https://www.npmjs.com/package/vue-shortkey - shorkey
+https://www.npmjs.com/package/vue2-filters - razni filteri (ovde je korisceno za currency - da ima tacku i zarez na broj, naziv valute 12.000,00 Din)
+
+
+watched on cache and bandwith

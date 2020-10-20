@@ -1,0 +1,35 @@
+  <!--mobile logout-->
+
+      <template
+        v-else-if="IsLoggedIn & $vuetify.breakpoint.smAndDown"
+        v-slot:activator="{ off: logoutActivator }"
+      >
+        <v-btn fab small class="primary pa-0" dark v-on="logoutActivator">
+          <!-- <v-btn
+          small
+          fab
+          class="dugme primary pa-0"
+          dark
+          v-on="logoutActivator"
+          v-shortkey="['ctrl', 'alt', 'l']"
+          @shortkey="Logout()"
+          @click="Logout()"
+          >-->
+          <v-icon class="pa-0" size="22">mdi-account</v-icon>
+        </v-btn>
+      </template>
+
+
+
+
+
+         <!--mobile login-->
+      <template
+        v-else-if="!IsLoggedIn & $vuetify.breakpoint.smAndDown"
+        v-slot:activator="{ on: loginActivator }"
+      >
+        <v-btn class="dugme primary mr-2" dark v-on="loginActivator">
+          Login
+          <!-- <v-icon class="ml-2">mdi-login</v-icon> -->
+        </v-btn>
+      </template>

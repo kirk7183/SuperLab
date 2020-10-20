@@ -1,0 +1,19 @@
+  uploadMultipleImages() {
+      this.files = this.$refs.file1.files[0];
+      // for (const file of files) {
+      //   firebase
+      //     .storage()
+      //     .ref("images")
+      //     .child(file.name)
+      //     .put(file);
+      // }
+    },
+    onUpload() {
+      // let newIter = this.files;
+      // for (const file of newIter) {
+      firebase
+        .storage()
+        .ref("rezultati/" + this.ime_i_prezime + "/" + this.br_fiskalnog_racuna)
+        .put(this.files);
+      // }
+    },

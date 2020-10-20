@@ -1,28 +1,33 @@
-# superLab
-Web app for labratory
+# holiday_planner
+Trip planner
 
 
 Build Setup
 
-#install dependencies
+## install dependencies
+   `npm install`
 
-npm install
+## serve with hot reload at localhost:8080
+   `npm run serv`
 
-#serve with hot reload at localhost:8080
+## build for production with minification
+   `npm run build`
 
-npm run serv
+## Language: 
+   JavaScript
+## Framework: 
+   Vue + Vuex (State management pattern + library)
+## UI Library: 
+    Vuetify
+## Database: 
+   NoSQL
+## Server: 
+   Firebase (hosting, authentication, cloud firestore, storage)
+## devDependencies:
+   cli, babel, eslint, router, vuex, sass, vuetify
 
-#build for production with minification
+## Short info: 
+    SPA (Single-page application) that allows lab clients to learn more about the lab, the services they provide, check how much analysis will cost them and view results online. And it allows lab workers to quickly and efficiently publish new lab-related news, simply change the price of services, add new or delete old services. Manipulation of the text of the application itself is also available.
 
-npm run build
-
-Language: JavaScript
-Framework: Vue + Vuex (State management pattern + library)
-UI Library: Vuetify
-Database: NoSQL
-Server: Firebase (hosting, authentication, cloud firestore, storage)
-devDependencies:cli, babel, eslint, router, vuex, sass, vuetify
-
-Short info:SPA (Single-page application) that allows lab clients to learn more about the lab, the services they provide, check how much analysis will cost them and view results online. And it allows lab workers to quickly and efficiently publish new lab-related news, simply change the price of services, add new or delete old services. Manipulation of the text of the application itself is also available.
-
- Live demo https://farmakon-ff747.web.app/
+## Live demo 
+    https://farmakon-ff747.web.app/

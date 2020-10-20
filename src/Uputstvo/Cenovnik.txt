@@ -1,0 +1,229 @@
+<template>
+  <div class="mt-10">
+    <p class="text-center font-weight-medium text-uppercase mb-8 display-1">cenovnik</p>
+    <v-container fluid class="ma-0">
+      <v-row class="d-flex ma-0 pa-0" justify="center">
+        <v-col cols="12" md="6" class="pa-5 mr-0">
+          <div v-for="(grupa, index) in lista_grupa_cena" :key="index">
+            <v-card class="mx-auto mb-5 pa-0" max-width="600">
+              <v-toolbar flat color="blue-grey" dark dense class="pl-0 pr-0">
+                <!-- Listanje grupe cena -->
+                <v-toolbar-title class="mr-0 text-capitalize">{{ grupa.naziv_grupe_cena }}</v-toolbar-title>
+                <!-- {{grupa.naziv_grupe_cena.map}} -->
+                <!-- {{grupa.dataa.map}} -->
+                <!-- {{grupa.datay}} -->
+                <v-spacer></v-spacer>
+              </v-toolbar>
+              <!-- Listanje usluga -->
+              <div v-for="(lista, indexaa) in grupa.dataa" :key="indexaa">
+                <v-card-text class="pl-1 pr-4 py-2 align-center d-flex">
+                  <v-checkbox
+                    :key="indexaa"
+                    multiple
+                    dense
+                    id="indexaa"
+                    v-model="selected"
+                    class="ml-3 text-capitalize"
+                    color="success"
+                    :label="indexaa"
+                    :value="lista"
+                    @change="provera(indexaa)"
+                  >></v-checkbox>
+                  <!-- @change="asd(indexaa, lista.Cena)" -->
+                  <!-- @change="asd(indexaa, lista.Cena)" -->
+
+                  <!-- <span>{{indexaa.Cena}}</span> -->
+                  <v-tooltip top>
+                    <template v-slot:activator="{ on }">
+                      <v-icon class="ml-2" color="primary" dark v-on="on">mdi-tooltip-outline</v-icon>
+                    </template>
+                    <span>{{lista.Opis_usluge}}</span>
+                  </v-tooltip>
+                  <v-spacer></v-spacer>
+                  {{lista.Cena | currency(' Din', 2, { symbolOnLeft: false , decimalSeparator: ',' , thousandsSeparator: '.' }) }}
+                </v-card-text>
+                <v-spacer></v-spacer>
+              </div>
+            </v-card>
+          </div>
+        </v-col>
+
+        <v-col cols="12" md="6" class="pa-5 mr-0">
+          <div id="div_kalkulator" style>
+            <p justify="center">Ukupno:</p>
+
+            <v-row class="ma-0 pa-0" v-for="(lista1, indexa1) in selected" :key="indexa1">
+              <p>{{indexa1}}</p>
+              <p>{{lista1.Cena}}</p>
+            </v-row>
+            <!-- <p>{{lista[indexaa]}}</p> -->
+            <!-- <p>{{indexaa}}</p> -->
+            <!-- <p>{{selected.indexa1}}</p>
+            <p>{{selected}}</p>-->
+            <!-- <p>{{grupa.dataa}}</p>-->
+
+            <!-- <p>{{lista1}}</p> -->
+            <!-- <p>{{lista.Opis_usluge}}</p> -->
+            <!-- <p>{{lista}}</p> -->
+            <!-- <v-spacer></v-spacer> -->
+            <!-- <div
+                class="mr-12"
+            >{{select.Cena | currency(' Din', 2, { symbolOnLeft: false , decimalSeparator: ',' , thousandsSeparator: '.' }) }}</div>-->
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+</template>
+
+<script>
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      selected: [],
+      index1: "",
+      checkboxState: false
+    };
+  },
+  created() {
+    this.$store.dispatch("Pregled_grupa_cena");
+  },
+  computed: {
+    ...mapGetters({ lista_grupa_cena: "Lista_grupa_cena" })
+  },
+  methods: {
+    provera() {
+      // console.log(this.selected);
+      // if (!this.selected[indexaa].length) {
+      // this.selected.pop([indexaa]);
+      // this.selected.pop(this.selected.indexOf(indexaa), 1);
+      // console.log("prazno");
+      // }
+      // console.log(this.selected[indexaa]);
+      console.log(this.selected);
+    },
+    asd(indexaa, cena) {
+      this.checkboxState = !this.checkboxState;
+      if (this.checkboxState == true) {
+        this.selected.push({ naziv: indexaa, cena: cena });
+
+        console.log(this.selected);
+      } else {
+        this.selected.pop({ naziv: indexaa, cena: cena });
+      }
+    }
+  }
+};
+</script>
+
+<style>
+#div_kalkulator {
+  border: 1px solid red;
+  position: sticky;
+  top: 30px;
+}
+
+label.v-label.theme--light {
+  color: black;
+}
+/* .v-input--selection-controls .v-input__slot > .v-label,
+.v-input--selection-controls .v-radio > .v-label {
+  color: Black;
+} */
+/* #asd {
+  color: #000;
+} */
+</style>
+  <!--   // UrinListaShow: true,
+      // selected: [],
+      cenovnik: {
+        UrinLista: [
+          { show: true },
+          {
+            podaci: [
+              {
+                naziv: "naziv1",
+                objasnjenje: "neki hint1",
+                cena: 100
+              },
+              {
+                naziv: "naziv2",
+                objasnjenje: "neki hint2",
+                cena: 125
+              },
+              {
+                naziv: "naziv3",
+                objasnjenje: "neki hint3",
+                cena: 1175
+              }
+            ]
+          }
+        ],
+        analiza_krvi: [
+          { show: true },
+          {
+            podaci: [
+              {
+                naziv: "naziv4",
+                objasnjenje: "neki hint4",
+                cena: 200
+              },
+              {
+                naziv: "naziv5",
+                objasnjenje: "neki hint5",
+                cena: 225
+              },
+              {
+                naziv: "naziv6",
+                objasnjenje: "neki hint6",
+                cena: 2175
+              }
+            ]
+          }
+        ],
+        analiza_krvi1: [
+          { show: true },
+          {
+            podaci: [
+              {
+                naziv: "naziv4",
+                objasnjenje: "neki hint4",
+                cena: 200
+              },
+              {
+                naziv: "naziv5",
+                objasnjenje: "neki hint5",
+                cena: 225
+              },
+              {
+                naziv: "naziv6",
+                objasnjenje: "neki hint6",
+                cena: 2175
+              }
+            ]
+          }
+        ],
+        analiza_krvi2: [
+          { show: true },
+          {
+            podaci: [
+              {
+                naziv: "naziv24",
+                objasnjenje: "neki hint4",
+                cena: 200
+              },
+              {
+                naziv: "naziv8",
+                objasnjenje: "neki hint5",
+                cena: 225
+              },
+              {
+                naziv: "naziv 6",
+                objasnjenje: "neki hint6",
+                cena: 2175
+              }
+            ]
+          }
+        ]
+      }    -->

@@ -1,0 +1,32 @@
+<template>
+  <div>
+    <div v-for="(nudimo, index) in lista_grupa_nudimo" :key="index">
+      <div v-for="(nudimo2, index2) in nudimo.data1" :key="index2">
+        <p>{{index2}}</p>
+      </div>
+      <!-- <p v-show="nudimo.data1">{{nudimo.data1}}</p> -->
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      nudimo: this.$route.params.nudimo,
+    };
+  },
+  created() {
+    this.$store.dispatch("Nudimo");
+  },
+  computed: {
+    ...mapGetters({
+      lista_grupa_nudimo: "Lista_grupa_nudimo",
+    }),
+  },
+};
+</script>
+
+<style>
+</style>
