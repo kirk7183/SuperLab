@@ -1,5 +1,5 @@
-# holiday_planner
-Trip planner
+# SuperLab
+Online app
 
 
 Build Setup
