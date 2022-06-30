@@ -8,6 +8,13 @@
         ? `pa-1 mt-3`
         : ``
     "
+    :style="
+      $vuetify.breakpoint.lgAndUp
+        ? `max-width: 1200px;  margin-left:auto !important; margin-right:auto !important;`
+        : $vuetify.breakpoint.xs
+        ? `ma-3 mt-7`
+        : ``
+    "
   >
     <!-- Pregled rezultata CARD -->
 

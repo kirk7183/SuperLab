@@ -4,8 +4,15 @@
       xl="12"
       style="background: #f0eeeb"
       :class="$vuetify.breakpoint.xs ? `pa-2` : `pa-4`"
+      :style="
+      $vuetify.breakpoint.lgAndUp
+        ? `max-width: 1200px;  margin-left:auto !important; margin-right:auto !important;`
+        : $vuetify.breakpoint.xs
+        ? ``
+        : ``
+    "
     >
-      <v-card elevation="18">
+      <v-card class="slider-wrapper" elevation="18">
         <div class="slider">
           <!--autohideTime***koliko sekunde se vide kontrole na slici  -->
           <vue-flux
@@ -15,6 +22,7 @@
             :options="vfOptions"
             :images="vfImages"
             :transitions="vfTransitions"
+            :size="{ width: 640, height: 360 }"
             ref="slider"
           >
             <template v-slot:preloader>
@@ -32,8 +40,8 @@
             :class="$vuetify.breakpoint.xs ? `pl-3 pr-1 py-0` : ``"
           >
             <v-card class="mt-6">
-              <v-img src="../assets/certificate.jpg" />
-              <p class="text-center pa-2">Akreditovana laboratorija</p>
+              <v-img src="../assets/certificate.jpg" style="width:60%; margin: 0 auto"/>
+              <p class="text-center pa-2" style="font-size: 20px;">Akreditovana laboratorija</p>
             </v-card>
           </v-flex>
           <v-flex
@@ -43,8 +51,8 @@
             :class="$vuetify.breakpoint.xs ? `pr-3 pl-1 py-0` : ``"
           >
             <v-card class="mt-6">
-              <v-img src="../assets/microskop.jpg" alt />
-              <p class="text-center pa-2">Najsavremenija laboratorija</p>
+              <v-img src="../assets/microskop.jpg" style="width:60%; margin: 0 auto" alt />
+              <p class="text-center pa-2" style="font-size: 20px;">Najsavremenija laboratorija</p>
             </v-card>
           </v-flex>
           <v-flex
@@ -54,8 +62,8 @@
             :class="$vuetify.breakpoint.xs ? `pl-3 pr-1 py-0` : ``"
           >
             <v-card class="mt-6">
-              <v-img src="../assets/doctors.jpg" alt />
-              <p class="text-center pa-2">Profesionalni saveti lekara</p>
+              <v-img src="../assets/doctors.jpg" style="width:60%; margin: 0 auto" alt />
+              <p class="text-center pa-2" style="font-size: 20px;">Profesionalni saveti lekara</p>
             </v-card>
           </v-flex>
           <v-flex
@@ -65,8 +73,8 @@
             :class="$vuetify.breakpoint.xs ? `pr-3 pl-1 py-0` : ``"
           >
             <v-card class="mt-6">
-              <v-img src="../assets/reward.jpg" alt />
-              <p class="text-center pa-2">Labaratorija sa nagradama</p>
+              <v-img src="../assets/reward.jpg" style="width:60%; margin: 0 auto" alt />
+              <p class="text-center pa-2" style="font-size: 20px;">Labaratorija sa nagradama</p>
             </v-card>
           </v-flex>
         </v-layout>
@@ -77,7 +85,7 @@
         <v-row class="d-flex ma-0 pa-0">
           <!-- Prikaz ponude korisnicima-->
           <v-col cols="12" md="5" class="pa-0 mr-0">
-            <p class="display-1 font-weight-medium mb-10" align="center">
+            <p class="display-1 font-weight-medium mt-10 mb-10" align="center">
               Obaveštenja:
             </p>
             <div
@@ -142,7 +150,7 @@
           <v-col cols="12" md="5" class="pa-5 ml-0 text-center">
             <p
               id="home_id_tag"
-              class="display-1 font-weight-medium mb-10 text-center"
+              class="display-1 font-weight-medium mt-5 mb-10 text-center"
               align="center"
             >
               SuperLab svojim pacijentima nudi:
@@ -184,7 +192,7 @@
             elevation="5"
           >
             <div class="d-flex my-3">
-              <div class="ma-0 pr-4" xs6>
+              <div class="social ma-0 pr-4" xs6>
                 <a
                   href="https://www.facebook.com/igor.k.vasic.9"
                   target="_blank"
@@ -194,7 +202,7 @@
                   >
                 </a>
               </div>
-              <div class="ma-0 pl-4" xs6>
+              <div class="social ma-0 pl-4" xs6>
                 <a
                   href="https://www.instagram.com/kirk_zmajeva_kugla/"
                   target="_blank"
@@ -210,7 +218,7 @@
             class="d-flex align-center justify-center mx-6 my-3"
             elevation="5"
           >
-            <v-layout wrap class justify-center>
+            <v-layout wrap justify-center class="py-3">
               <!-- telefon -->
               <v-flex class="justify-center align-center d-flex" xs2>
                 <v-icon size="25">mdi-phone</v-icon>
@@ -342,25 +350,40 @@ export default {
 </script>
 
 <style scoped>
+.social a {
+  text-decoration: none;
+}
 @media all and (max-width: 470px) {
   .flux-caurosel {
     height: 90px;
     position: relative;
     width: 100%;
   }
+  .slider-wrapper{
+    width: 98%;
+    margin: 0 auto;
+  }
+}
   @media all and (max-width: 321px) {
     .flux-caurosel {
       height: 80px;
       position: relative;
       width: 100%;
     }
+    .slider-wrapper{
+    width: 98%;
+    margin: 0 auto;
   }
-}
+  }
 @media all and (min-width: 471px) {
   .flux-caurosel {
     height: 120px;
     position: relative;
     width: 100%;
+  }
+  .slider-wrapper{
+    width: 98%;
+    margin: 0 auto;
   }
 }
 @media all and (min-width: 560px) {
@@ -369,12 +392,20 @@ export default {
     position: relative;
     width: 100%;
   }
+  .slider-wrapper{
+    width: 98%;
+    margin: 0 auto;
+  }
 }
 @media all and (min-width: 620px) {
   .flux-caurosel {
     height: 170px;
     position: relative;
     width: 100%;
+  }
+  .slider-wrapper{
+    width: 98%;
+    margin: 0 auto;
   }
 }
 @media all and (min-width: 730px) {
@@ -383,14 +414,49 @@ export default {
     position: relative;
     width: 100%;
   }
+  .slider-wrapper{
+    width: 98%;
+    margin: 0 auto;
+  }
 }
 @media all and (min-width: 890px) {
   .flux-caurosel {
-    height: 270px;
+    height: 300px;
     position: relative;
     width: 100%;
   }
+  .slider-wrapper{
+    width: 98%;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 1200px;
+    }
 }
+/* @media all and (min-width: 1264px) {
+  .flux-caurosel {
+    height: 300px;
+    position: relative;
+    width: 100%;
+  }
+  .slider-wrapper{
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media all and (min-width: 1904px) {
+  .flux-caurosel {
+    height: 450px;
+    position: relative;
+    width: 100%;
+  }
+  .slider-wrapper{
+    width: 100%;
+    margin: 0 auto;
+  }
+} */
+
+
 
 .scale-transition-enter-active {
   transition: all 0.3s ease;

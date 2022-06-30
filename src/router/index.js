@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import store from '../store/index.js'
 import firebase from 'firebase/app';
-import Intro from '../components/Intro.vue';
+// import Intro from '../components/Intro.vue';
 import NotFound from '@/views/NotFound.vue';
 
 
@@ -23,14 +23,20 @@ const routes = [
         component: NotFound
     },
     {
+        // path: '/',
+        // name: 'Intro',
+        // components: {
+        //     glavni_router: Intro
+        // }
+
         path: '/',
-        name: 'Intro',
-        components: {
-            glavni_router: Intro
-        }
+        name: 'Home',
+        component: Home,
+        redirect: '/home'
+
         // beforeEnter: (to, from, next) => {
         //     if (to.name == '/') {
-        //         // "redirect: 'home'" 
+        //         "redirect: 'home'" 
         //         next({ name: 'Home' })
         //     } else {
         //         next()
@@ -48,96 +54,96 @@ const routes = [
         path: '/about',
         name: 'About',
         component: () =>
-            import ('../views/About.vue')
+            import ('@/views/About.vue')
     },
     {
         path: '/spermogram_i_spermokultura',
         name: 'Spermogram_i_spermokultura',
         component: () =>
-            import ('../views/Nudimo/spermogram_i_spermokultura.vue')
+            import ('@/views/Nudimo/spermogram_i_spermokultura.vue')
     },
     {
         path: '/analiza_urina',
         name: 'Analiza_urina',
         component: () =>
-            import ('../views/Nudimo/analiza_urina.vue')
+            import ('@/views/Nudimo/analiza_urina.vue')
     },
     {
         path: '/sakupljanje_uzorka_stolice',
         name: 'Sakupljanje_uzorka_stolice',
         component: () =>
-            import ('../views/Nudimo/sakupljanje_uzorka_stolice.vue')
+            import ('@/views/Nudimo/sakupljanje_uzorka_stolice.vue')
     },
     {
         path: '/vadjenje_krvi',
         name: 'Vadjenje_krvi',
         component: () =>
-            import ('../views/Nudimo/vadjenje_krvi.vue')
+            import ('@/views/Nudimo/vadjenje_krvi.vue')
     },
     {
         path: '/test_na_intoleranciju',
         name: 'Test_na_intoleranciju',
         component: () =>
-            import ('../views/Nudimo/test_na_intoleranciju.vue')
+            import ('@/views/Nudimo/test_na_intoleranciju.vue')
     },
     {
         path: '/covid_19_testiranje',
         name: 'Covid_19_testiranje',
         component: () =>
-            import ('../views/Nudimo/covid_19_testiranje.vue')
+            import ('@/views/Nudimo/covid_19_testiranje.vue')
     },
     {
         path: '/najcescaPitanja',
         name: 'NajcescaPitanja',
         component: () =>
-            import ('../views/NajcescaPitanja.vue')
+            import ('@/views/NajcescaPitanja.vue')
     },
     {
         path: '/onlineRezultati',
         name: 'OnlineRezultati',
         component: () =>
-            import ('../views/OnlineRezultati.vue')
+            import ('@/views/OnlineRezultati.vue')
     },
     {
         path: '/cenovnik',
         name: 'Cenovnik',
         component: () =>
-            import ('../views/Cenovnik.vue')
+            import ('@/views/Cenovnik.vue')
     },
 
     {
         path: '/unosObavestenja',
         name: 'UnosObavestenja',
         component: () =>
-            import ('../views/UnosObavestenja.vue'),
+            import ('@/views/UnosObavestenja.vue'),
         meta: { requiresAuth: true }
     },
     {
         path: '/unosRezultata',
         name: 'UnosRezultata',
         component: () =>
-            import ('../views/UnosRezultata.vue'),
+            import ('@/views/UnosRezultata.vue'),
         meta: { requiresAuth: true }
     },
     {
         path: '/korisnickiPanel',
         name: 'KorisnickiPanel',
         component: () =>
-            import ('../views/KorisnickiPanel.vue'),
+            import ('@/views/KorisnickiPanel.vue'),
         meta: { requiresAuth: true }
     },
     {
         path: '/uslugeCene',
         name: 'UslugeCene',
         component: () =>
-            import ('../views/UslugeCene.vue'),
+            import ('@/views/UslugeCene.vue'),
         meta: { requiresAuth: true }
     },
     {
         path: '/unosNajcescaPitanja',
         name: 'UnosNajcescaPitanja',
         component: () =>
-            import ('../views/UnosNajcescaPitanja.vue'),
+            import ('@/views/UnosNajcescaPitanja.vue'),
         meta: { requiresAuth: true }
     },
 ]

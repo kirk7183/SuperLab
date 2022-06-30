@@ -5,7 +5,7 @@
     <!-- <intro v-if="this.$route.matched.some(({ name }) => name === '/')" />-->
     <!-- <intro v-if="checking_1" /> -->
     <v-main v-if="!checking_2">
-      <navbar />
+      <navbar class="11111122312312331231"/>
       <!-- OVAKO SE CUVA CACHE ZA SVAKU STRANU POSEBNO CAK I AKO IMA PARAMETAR NPR. /anime/:id -->
       <!-- Max 10 sam stavio zato sto toliko ima route -->
       <!-- <keep-alive :max="10">

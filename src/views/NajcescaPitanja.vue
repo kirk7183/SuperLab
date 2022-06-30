@@ -3,7 +3,14 @@
   <v-card
     :class="
       $vuetify.breakpoint.smAndUp
-        ? `ma-12`
+        ? `ma-7 mt-9`
+        : $vuetify.breakpoint.xs
+        ? `ma-3 mt-7`
+        : ``
+    "
+    :style="
+      $vuetify.breakpoint.lgAndUp
+        ? `max-width: 1200px;  margin-left:auto !important; margin-right:auto !important;`
         : $vuetify.breakpoint.xs
         ? `ma-3 mt-7`
         : ``
@@ -22,7 +29,7 @@
       "
     >
       <p
-        class="headline font-weight-medium my-10"
+        class="headline font-weight-medium mt-10 mb-10"
         :class="
           $vuetify.breakpoint.smAndUp
             ? `headline`

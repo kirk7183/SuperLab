@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="intro">
-      <!-- <v-parallax src="@\assets\slika-10.jpg" height="400"> -->
+      <v-parallax src="@\assets\slika-10.jpg" height="400">
         <div class="naziv-firme">
           <sequential-entrance fromLeft delay="1000">
             <!-- sve unutar sequential-entrance mora da ima neku klasu, bilo koju da bi radilo -->
@@ -32,7 +32,7 @@
             </div>
           </sequential-entrance>
         </div>
-      <!-- </v-parallax> -->
+      </v-parallax>
       <!--Vuetify Parallax  !BITNO DA BI PARALLAX RADIO REZOLUCIJA SLIKA MORA DA BUDE OKO 1600 USIRINU. pOGLEDAJ SLIKA-10 ILI 1.JPG-->
       <div>
         <p
@@ -42,7 +42,7 @@
         >
           Stručno i ljubazno osoblje
         </p>
-        <!-- <v-parallax src="@\assets\2.jpg" height="300"></v-parallax> -->
+        <v-parallax src="@\assets\2.jpg" height="300"></v-parallax>
         <p
           v-scroll-animation-dole-gore
           class="font-weight-medium row wrap justify-center ma-0 pa-5 text-center"
@@ -50,7 +50,7 @@
         >
           Saveti
         </p>
-        <!-- <v-parallax src="@\assets\3.jpg" height="300"></v-parallax> -->
+        <v-parallax src="@\assets\3.jpg" height="300"></v-parallax>
         <p
           v-scroll-animation-dole-gore
           class="font-weight-medium row wrap justify-center ma-0 pa-5 text-center"
@@ -58,7 +58,7 @@
         >
           Online rezultati
         </p>
-        <!-- <v-parallax src="@\assets\1.jpg" height="300"></v-parallax> -->
+        <v-parallax src="@\assets\1.jpg" height="300"></v-parallax>
       </div>
     </div>
   </div>

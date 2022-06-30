@@ -6,7 +6,7 @@
     </div>
     <v-card
       elevation="5"
-      max-width="1050"
+      max-width="1100"
       :class="
         $vuetify.breakpoint.smAndUp
           ? `my-10 mx-auto`
@@ -14,6 +14,13 @@
           ? `my-7 mx-2`
           : ``
       "
+      :style="
+      $vuetify.breakpoint.lgAndUp
+        ? `max-width: 1200px;  margin-left:auto !important; margin-right:auto !important;`
+        : $vuetify.breakpoint.xs
+        ? ``
+        : ``
+    "
       v-if="!LoadingDataCenovnik"
     >
       <p
@@ -23,7 +30,7 @@
       </p>
       <v-container fluid class="ma-0 pa-0">
         <v-row class="d-flex ma-0 pa-0" justify="center">
-          <v-col cols="12" md="7" class="py-5 px-0 mr-0">
+          <v-col cols="12" md="6" class="py-5 px-0 mr-0">
             <div
               v-for="(grupa, index) in lista_grupa_cena"
               :key="index"

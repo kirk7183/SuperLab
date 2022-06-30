@@ -2,18 +2,19 @@
   <div class="primary">
     <v-container class="ma-0 py-0" fluid>
       <v-row class="d-flex" align="center" justify="center">
+        <!--960px and more-->
         <v-col cols="1" class="pa-0 mr-5 my-3 hidden-sm-and-down">
           <v-img
             src="../assets/SuperLab.png"
             @click="goToHome()"
-            :style="{ cursor: 'pointer' }"
+            :style="{ cursor: 'pointer', maxWidth: '50px;' }"
           ></v-img>
         </v-col>
-        <v-col cols="3" class="pa-0 my-1 hidden-md-and-up">
-          <v-img
+        <v-col cols="3" class="my-1 hidden-md-and-up">
+          <v-img class="Picture hidden-md-and-up"
             src="../assets/SuperLab.png"
             @click="goToHome()"
-            :style="{ cursor: 'pointer' }"
+            :style="{ cursor: 'pointer', width: '80%' }"
           ></v-img>
         </v-col>
         <span class="hidden-sm-and-down">
@@ -46,9 +47,8 @@
             </div>
             <!-- social networks -->
             <div class="d-flex">
-              <div a class="ml-5 mt-1 mr-2">
-                <a
-                  href="https://www.facebook.com/igor.k.vasic.9"
+              <div class="social ml-5 mt-1 mr-2">
+                <a href="https://www.facebook.com/igor.k.vasic.9"
                   target="_blank"
                 >
                   <v-icon size="35" color="indigo"
@@ -56,9 +56,8 @@
                   >
                 </a>
               </div>
-              <div a class="ml-2 mt-1 mr-2">
-                <a
-                  href="https://www.instagram.com/kirk_zmajeva_kugla/"
+              <div class="social ml-2 mt-1 mr-2">
+                <a href="https://www.instagram.com/kirk_zmajeva_kugla/"
                   target="_blank"
                 >
                   <v-icon size="35" color="red lighten-3">mdi-instagram</v-icon>
@@ -265,5 +264,11 @@ div.textaa > p {
 }
 .scale-transition-leave-active {
   transition: all 0.2s ease;
+}
+.social a {
+  text-decoration: none;
+}
+.social:hover {
+  opacity: 0.6;
 }
 </style>
